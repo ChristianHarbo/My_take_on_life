@@ -11,11 +11,14 @@ public class PrintOutBoardClars  implements PrintOutBoard {
 				if (theBooleanBoardArr[x][y])
 					System.out.print("[1]");
 				else
-					System.out.print("[0]");
+					System.out.print("[ ]");
 			}
 			System.out.println();
 
 		}
+		//just to give some space between the different Generations
+		for (int i=0 ; i<3; i++)
+			System.out.println();
 	}
 
 }

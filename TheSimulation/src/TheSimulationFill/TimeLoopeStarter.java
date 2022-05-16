@@ -17,7 +17,6 @@ public class TimeLoopeStarter extends Thread implements TimeLoope {
 	@Override
 	public void run() {
 
-		System.out.println("how meany milli secons : " + pausForHowManySek + "\nHow meany : " + howManyTimesTord);
 
 		for (int i = 0; i <= howManyTimesTord; i++) {
 
@@ -34,8 +33,7 @@ public class TimeLoopeStarter extends Thread implements TimeLoope {
 	}
 
 	public void getTimes(int numberOfLoop) {
-		System.out.println(howManyRuns+ " howManyRuns");
-		System.out.println(numberOfLoop+ " numberOfLoop");
+
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {

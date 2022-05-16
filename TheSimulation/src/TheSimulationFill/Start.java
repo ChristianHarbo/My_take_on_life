@@ -7,7 +7,7 @@ public class Start extends Thread{
 		//// Calling all the class
 		TimeLoope time = new TimeLoopeStarter();
 		NewBoard boardCreator = new BoardCreator();
-		ImpRulesOffTheGame round = new RulesOffTheGame();
+		ImpRulesOffTheGame round = new JohnHortonRonwayRules();
 		PrintOutBoard printOut = new PrintOutBoardClars();
 
 		// How many times should ti loop
@@ -28,10 +28,10 @@ public class Start extends Thread{
 		/// board size
 
 		// also called X
-		int row = 50;
+		int row = 30;
 
 		// also called Y
-		int col = 50;
+		int col = 30;
 
 		boolean board[][] = boardCreator.theNewBoard(row, col);
 
