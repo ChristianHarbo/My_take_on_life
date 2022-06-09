@@ -1,8 +1,9 @@
-package TheSimulationFill;
+package Output;
 
 // This Class is for dispainrgon the console the selected boolean Array 
 public class PrintOutBoardClars  implements PrintOutBoard {
-
+ 
+	@Override
 	public void printBoard(boolean theBooleanBoardArr[][]) {
 
 		for (int x = 0; x < theBooleanBoardArr.length; x++) {
@@ -20,5 +21,7 @@ public class PrintOutBoardClars  implements PrintOutBoard {
 		for (int i=0 ; i<3; i++)
 			System.out.println();
 	}
+
+	
 
 }

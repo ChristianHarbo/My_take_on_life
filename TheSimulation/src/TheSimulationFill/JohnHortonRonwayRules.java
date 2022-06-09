@@ -5,25 +5,26 @@ I can now see that I got it wrong and it need to do a correction, so that is why
 class cold RulesOffTheGame in to the new calss cold JohnHortonRonwayRules and chenced the rules. 
 The changes have been done in line 45. */
 
+// One more ting I can see that I got the name wrong, it is not John Horton Ronway but John Horton Conway,
+
 public class JohnHortonRonwayRules implements ImpRulesOffTheGame {
 
 	@Override
 	public boolean[][] whatHappenedAfterEachRound(boolean[][] TheBoardSoFar, int row, int col) {
-		int tester1 = 0;
-		int tester2 = 0;
+
 		// Creat a new board, so that we can move the result to and send out.
 		boolean[][] newBoard = new boolean[row][col];
 
 		// cod to fold the array any with
 		for (int rowOnBoard = 0; rowOnBoard < col; rowOnBoard++) {
-			tester2++;
+
 			for (int colOnBoard = 0; colOnBoard < row; colOnBoard++) {
 
 				// check a raunt on the seraunding fields
 				int i = 0;
 
 				for (int rowCheck = rowOnBoard - 1; rowCheck <= rowOnBoard + 1; rowCheck++) {
-					tester1++;
+		
 					for (int colCheck = colOnBoard - 1; colCheck <= colOnBoard + 1; colCheck++) {
 
 						// Make sure that we do not use the test the edge of the board

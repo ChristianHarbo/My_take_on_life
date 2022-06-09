@@ -1,6 +1,24 @@
+/*
+* This is my take  on John Horton Ronway "Game" called Life  
+* */
+
 package TheSimulationFill;
 
-public class Start extends Thread{
+import Output.MyFrame;
+
+import Output.PrintOutBoard;
+import Output.PrintOutBoardClars;
+import Output.TimeLoope;
+import Output.TimeLoopeStarter;
+
+public class Start extends Thread {
+	
+	static int col;
+	static int row;
+	public void steRowCol (int setRow, int setCol) {
+		row =setRow;
+		col = setCol;
+	}
 
 	public static void main(String[] args) {
 
@@ -9,6 +27,7 @@ public class Start extends Thread{
 		NewBoard boardCreator = new BoardCreator();
 		ImpRulesOffTheGame round = new JohnHortonRonwayRules();
 		PrintOutBoard printOut = new PrintOutBoardClars();
+		
 
 		// How many times should ti loop
 		int howMeanyLoops = 13;
@@ -24,37 +43,31 @@ public class Start extends Thread{
 
 		// start time
 		time.start();
-		
-		/// board size
 
+		/// board size
 		// also called X
-		int row = 30;
+		row = 30;
 
 		// also called Y
-		int col = 30;
+		col = 30;
 
-		boolean board[][] = boardCreator.theNewBoard(row, col);
+		// make new board and What should be on the board and as well set row, col.
 
-		// What should be on the board
-		board[1][1] = true;
-		board[3][4] = true;
-		board[4][3] = true;
-		board[2][2] = true;
-		board[3][3] = true;
-		board[3][3] = true;
+		boardCreator.theNewBoard(row, col);
+		boolean board[][] = boardCreator.getnewBoard();
 
-		printOut.printBoard(board);
+
+
+		// to open the Window
+		new MyFrame();
 
 		for (int inLoop = 0; inLoop <= howMeanyLoops; inLoop++) {
-			
+			printOut.printBoard(board);
 			time.getTimes(inLoop);
 			board = round.whatHappenedAfterEachRound(board, row, col);
-			printOut.printBoard(board);
+
 		}
 
-		// the rules
-
-		// let's loop through array to print each row and column out
 
 	}
 }
